@@ -47,4 +47,12 @@ No segundo campo: /app/.apt/usr/bin/google-chrome
 Após esses passos, entrar no arquivo .gitignore e digitar /monitoramento
 Isso vai servir para não encaminhar a pasta ao servidor
 
+Depois va no heroku, clicar em more, view logs: A resposta deve ser Build suceed
+
+Na tela clique em 'overview' e clicar em config dynos. Na proxima tela clicar novamente em config dynos, depois e na proxima tela,
+na mesma linha da palavra 'worker', clicar em editar e habilitar.
+Depois clicar em 'more', 'view logs' e confirmar se o dynos(que é o servidor)
+
+Depois de tudo isso, é só acompanhar o resultado. Vai mostrar o produto e os valores.
+
 
