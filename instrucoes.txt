@@ -1,0 +1,50 @@
+Após a criação do código do arquivo app.py, criar um ambiente virtual para o projeto digitando no terminal:
+
+python -m venv 'nomedaaplicação'
+
+E é necessário ativar este ambiente virtual para que as instações sejam feitas somente neste ambiente, digite no terminal:
+
+.\monitoramento\Scripts\activate
+
+Dentro deste ambiente criado, instalar selenium, webdriver-manager:
+
+pip install selenium webdriver-manager
+
+Depois, na raiz da pasta, criar o arquivo Procfile - Vai dar instruções ao heroku sobre qual deve ser executado ao subir o servidor.
+Um serie de comandos serão adicionados neste arquivo. Ver lá!
+
+Voltando ao terminal, será necessário criar o arquivo requirements.txt dentro do ambiente virtual monitoramento:
+
+pip freeze > 'requirements.txt'
+
+Depois, entrar no heroki, criar novo, colocar nome, depois clicar em conectar com github. Após a conexão, colocar no campo de pesquisa
+o nome do repositório e clicar em conectar.
+
+O proximo passo é clicar em 'Enable Automatic Deploys' - vai habilitar a publicação automatica sempre que houver uma atualização
+do projeto através do git.
+
+Depois sobe a pagina, clicar em settings:
+adicionar builpack, para adicionar as ferramentas necessárias para automação python: 
+(add builpack) e selecionar o icone do python e clicar em save changes
+
+Depois adicione mais uma, que é do google chrome: (copiar e colar esse codigo la):
+https://github.com/heroku/heroku-buildpack-google-chrome.git
+depois clicar em save changes
+
+E mais uma ainda:
+https://github.com/heroku/heroku-buildpack-chromedriver
+depois clicar em save changes
+
+Após isso clicar em Reveal Config Vars e:
+no primeiro campo: CHROMEDRIVER_PATH
+No segundo campo: /app/.chromedriver/bin/chromedriver
+
+Depois clicar em add novamente e colocar:
+No primeiro campo: GOOGLE_CHROME_BIN
+No segundo campo: /app/.apt/usr/bin/google-chrome
+
+
+Após esses passos, entrar no arquivo .gitignore e digitar /monitoramento
+Isso vai servir para não encaminhar a pasta ao servidor
+
+
